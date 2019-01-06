@@ -331,6 +331,8 @@ function! cmakecomplete#Complete(findstart, base)
     let prevword = cmakecomplete#PreviousWord()
     if prevword == "PROPERTIES"
       let list = s:cmake_properties
+    elseif fname == "set"
+      let list = s:cmake_variables
     endif
   endif
   " return the completion words
